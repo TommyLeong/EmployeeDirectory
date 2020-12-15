@@ -31,7 +31,8 @@ const MainScreen = ({navigation}) => {
                                 backgroundColor:'white',
                                 width: '50%', 
                                 borderColor: missingName ? 'red' : 'transparent',
-                                borderWidth: 1
+                                borderWidth: 1,
+                                height: 50,
                             }}
                             placeholder="Employee name"
                             onChange={({nativeEvent})=>{
