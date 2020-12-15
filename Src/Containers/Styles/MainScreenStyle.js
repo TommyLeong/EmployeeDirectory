@@ -16,10 +16,11 @@ const styles = StyleSheet.create({
     searchBox:{
         width: '100%',
         display:'flex',
+        justifyContent:'center',
         alignItems:'center',
         paddingTop: '5%',
-        paddingBottom: '5%'
-
+        paddingBottom: '5%',
+        flexDirection:'row',
     }
 
 })

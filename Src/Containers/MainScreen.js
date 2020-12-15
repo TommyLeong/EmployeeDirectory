@@ -1,10 +1,11 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 import {
     Text,
     View,
     TextInput,
     TouchableWithoutFeedback,
     Keyboard,
+    Button
 } from 'react-native'
 import styles from './Styles/MainScreenStyle'
 
@@ -13,7 +14,12 @@ const MainScreen = ({navigation}) => {
 
     const [employeeName, setEmployeeName] = useState('')
     const [missingName, setMissingName] = useState(false)
-    const searchEmpRef = useRef(null);
+
+    const exploreEmployee = () => {
+        if(employeeName.trim().length < 1) return setMissingName(true)
+        setMissingName(false)
+        navigation.navigate('Result', {searchEmployee: employeeName});
+    }
 
     return(
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -31,11 +37,11 @@ const MainScreen = ({navigation}) => {
                             onChange={({nativeEvent})=>{
                                 setEmployeeName(nativeEvent.text);
                             }}
-                            onSubmitEditing={async() => {
-                                if(employeeName.trim().length < 1) return setMissingName(true)
-                                setMissingName(false)
-                                navigation.navigate('Result', {searchEmployee: employeeName});
-                            }}
+                            onSubmitEditing={async() => { exploreEmployee(); }}
+                        />
+                        <Button 
+                            title="Search"
+                            onPress={()=>{ exploreEmployee(); }}
                         />
                     </View>
             </View>
