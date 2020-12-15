@@ -13,8 +13,7 @@ const styles = StyleSheet.create({
     },
 
     flatlistDesign:{
-        height:'100%',
-        backgroundColor:'black'
+        height:'100%'
     }
 })
 
