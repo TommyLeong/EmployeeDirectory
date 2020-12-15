@@ -19,7 +19,7 @@ const AppFlow = () => {
         <Stack.Screen
           name="Result"
           component={ResultScreen}
-          options={{headerShown: true, title: ''}}
+          options={{headerShown: true}}
         />
       </Stack.Navigator>
     </NavigationContainer>
