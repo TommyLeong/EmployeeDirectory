@@ -12,12 +12,12 @@ const AppFlow = () => {
     <NavigationContainer>
       <Stack.Navigator name="Directory App">
         <Stack.Screen
-          name="MainScreen"
+          name="Search"
           component={MainScreen}
           options={{headerShown: true}}
         />
         <Stack.Screen
-          name="ResultScreen"
+          name="Result"
           component={ResultScreen}
           options={{headerShown: true, title: ''}}
         />
