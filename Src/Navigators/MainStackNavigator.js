@@ -14,12 +14,12 @@ const AppFlow = () => {
         <Stack.Screen
           name="Search"
           component={MainScreen}
-          options={{headerShown: true}}
+          options={{headerShown: true, title: 'Employee Explorer'}}
         />
         <Stack.Screen
           name="Result"
           component={ResultScreen}
-          options={{headerShown: true}}
+          options={{headerShown: true, title: 'Employee Overview'}}
         />
       </Stack.Navigator>
     </NavigationContainer>
