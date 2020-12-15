@@ -8,7 +8,7 @@ const ResultScreen = (props) => {
     const [subordinates, setSubordinates] = useState([]);
 
     const getUsers = async () => {
-        const result = await ApiManager.getEmployeeSubordinates(searchEmployee)
+        const result = await ApiManager.getEmployeeSubordinates(searchEmployee, true)
         setSubordinates(result)
     }
 
@@ -24,7 +24,6 @@ const ResultScreen = (props) => {
         );
       };
     
-
     return(
         <View style={styles.container}>
             <Text>Subordinates of {searchEmployee} are as below:</Text>
