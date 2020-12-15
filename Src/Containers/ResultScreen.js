@@ -16,24 +16,32 @@ const ResultScreen = (props) => {
         getUsers();
     },[])
 
-    const renderSubordinates = ({ item }) => {
+    const renderSubordinatesCard = ({ item }) => {
         return (
           <View style={styles.subordinatesCard}>
               <Text>{item}</Text>
           </View>
         );
       };
-    
-    return(
-        <View style={styles.container}>
-            <Text>Subordinates of {searchEmployee} are as below:</Text>
+
+    const renderSubordinates = () => {
+        if(subordinates.length > 0)
+        return(
             <FlatList
                 style={styles.flatlistDesign}
-                renderItem={renderSubordinates}
+                renderItem={renderSubordinatesCard}
                 data={subordinates}
                 keyExtractor={(item) => item}
             />
-            
+        )
+
+        return(<View><Text>No subordinates found</Text></View>)
+    }
+    
+    return(
+        <View style={styles.container}>
+            <Text>Subordinates of employee {searchEmployee}:</Text>
+            {renderSubordinates()}
         </View>
     )
 
