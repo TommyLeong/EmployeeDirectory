@@ -1,4 +1,4 @@
-# Mobile Contacts Application
+# Employee Directory Application
 
 This is a sample React-Native project which provide an employee a way to identify who works directly for a given employee. 
 
